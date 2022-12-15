@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/livewire', function () {
     return view('tutorial');
 });
+Route::get('/livewire-action', function () {
+    return view('action');
+});
