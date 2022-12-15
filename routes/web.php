@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,6 @@ Route::get('/livewire-action', function () {
 Route::get('/livewire-crud', function () {
     return view('users.index');
 });
+
+
+Route::get('users/{id}', [UserController::class, 'show'])->name('users.details');
