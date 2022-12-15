@@ -1,11 +1,11 @@
 <div>
     <table class="table">
+        @include('component.alert')
         <thead>
             <tr>
                 <th>No</th>
                 <th>Name</th>
                 <th>Email</th>
-
                 <th>Action</th>
             </tr>
         </thead>
@@ -17,8 +17,9 @@
                     <td>{{ $user->email }}</td>
                     <td>
                         <a href="{{ route('users.details', $user->id) }}" class="badge bg-primary">Detail</a>
-                        <a href="" class="badge bg-warning">Edit</a>
-                        <a href="" class="badge bg-danger">Delete</a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="badge bg-warning">Edit</a>
+                        <button wire:click="delete({{ $user->id }})" href=""
+                            class="badge bg-danger">Delete</button>
                     </td>
                 </tr>
             @endforeach

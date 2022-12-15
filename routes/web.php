@@ -29,3 +29,4 @@ Route::get('/livewire-crud', function () {
 
 
 Route::get('users/{id}', [UserController::class, 'show'])->name('users.details');
+Route::get('users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');

@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function show($id) {
+    public function show($id)
+    {
         $user = User::where('id', $id)->first();
         return view('users.show', [
+            'user' => $user
+        ]);
+    }
+    public function edit($id)
+    {
+        $user = User::where('id', $id)->first();
+        return view('users.edit', [
             'user' => $user
         ]);
     }
