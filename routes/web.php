@@ -22,3 +22,6 @@ Route::get('/livewire', function () {
 Route::get('/livewire-action', function () {
     return view('action');
 });
+Route::get('/livewire-crud', function () {
+    return view('users.index');
+});
